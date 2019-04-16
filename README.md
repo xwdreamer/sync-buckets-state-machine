@@ -46,6 +46,10 @@ and an AWS account that is configured on your system to be ready to use with the
       > vi fabfile_config.py                                             # Fill in your own values.
       > fab                                                              # Install everything into your AWS account.
 
+## No module named api错误处理
+      > pip install fabric==1.14.0               # 安装指定模块
+
+
 ## How to use
 
 Start the Amazon Step Functions console in your chosen region and start a new execution with an input like:
