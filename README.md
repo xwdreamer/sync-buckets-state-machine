@@ -21,6 +21,9 @@ into an Amazon S3 destination bucket as follows:
 * All files in the source bucket that are not present in the destination bucket or don't match their destination ETag
   are copied from source to destination.
 * All files in the destination bucket that are not present in the source bucket are deleted.
+* 第一次执行的时候，source当中有文件，destination当中没有文件，会将source的内容copy到destination当中，但是不会删除source的内容
+* 第二次执行的时候，会比对source和destination，destination当中有了的，会删除source当中的。
+* 不确定是否会进行文件内容的对比。还是只是进行文件名称的对比。
 
 This code is purely meant for illustration/demonstration purposes, please use it at your own risk. Although it has been
 developed carefully and with the best intentions in mind, there is no guarantee and there may be bugs. It **will copy
